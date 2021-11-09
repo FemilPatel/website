@@ -1,0 +1,82 @@
+  <!DOCTYPE html>
+<html>
+	
+    <head>
+		
+        <title>
+            Html CRUD with Pure JavaScript
+		</title>
+        <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+	</head>
+	
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <form  autocomplete="off">
+                        <div>
+                            <label>Full Name</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                            <input type="text" name="fullName" id="fullName">
+						</div>fullname, email id, passwored, xender, age, conutry, hobby, submit reset
+                        <div>
+                            <label>EMP Code</label>
+                            <input type="text" name="empCode" id="empCode">
+						</div>
+
+                        <div>
+                            <label>Salary</label>
+                            <input type="text" name="salary" id="salary">
+						</div>
+                        <div>
+                            <label>City</label>
+                            <input type="text" name="city" id="city">
+						</div>
+						<div  class="form-action-buttons">
+							
+						</div>
+					</form>
+				</td>
+				<td>
+                    <table class="list" id="employeeList">
+						<thead>
+							<tr>
+								<th>Full Name</th>
+								<th>EMP Code</th>
+								<th>Salary</th>
+								<th>City</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<button onclick = "onFormSubmit();">Submit</button>
+		<script> //let name = "Femil" ;
+			const onFormSubmit = () => {
+				const a = [ {id:1, name:"Femil", age:20} ,{id:2, name:"raj", age:16},{id:3, name:"gopal", age:16}]
+				const b=[]
+				const i = a.filter((value) => {
+					return value.id !== 2
+				})
+				console.log(i);
+				//console.log(b);
+				//console.log( Array.isArray(a));
+				//console.log( a instanceof Array); 
+				
+				//a.splice(filter,1);
+				//console.log();
+				//console.log(window.name);
+				//debugger
+				//const find = a.find(value =>(
+				// value.age === 16
+				//))
+				//console.log(find);
+			}
+		</script>
+	</body>
+	
+</html>					

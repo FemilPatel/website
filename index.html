@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registreation Form</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<style>
+
+	label{
+		color: black;
+		font-family: 'Times New Roman', Times, serif;
+	}
+	h3{
+		color:black;
+		font-family: 'Times New Roman', Times, serif;
+	}
+</style>
+<body>
+	<table>
+		<tr>
+			<td>
+				<div class="container">
+					<form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" >
+						<h3>Registreation</h3>
+						<div class="form-group">
+							<label for="profile_pic">Choose file to upload</label>
+							<input type="file" id="profile_pic" onchange="previewFile()"  ><br>
+							<img  src="" id='i' height="200" alt="Image preview...">
+						  </div>
+						  <div>
+						<div class="form-group">
+							<label>FullName:</label>
+							<input type="text" class="form-control" id="fullName" placeholder="Enter FullName" name="fullName">
+							<label id="lbltext2" style="color: red; visibility: hidden" > Invalid  </label>
+						</div>
+						<div class="form-group">
+							<label  for="email">Email:</label>
+							<input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+							<label id="lbltext" style="color: red; visibility: hidden" > Invalid  </label>
+						</div>
+						<div class="form-group">
+							<label for="pwd">Password:</label>
+							<input type="password" class="form-control" id="pwd" placeholder="Enter Password" name="pwd">
+							<label id="lbltext1" style="color: red; visibility: hidden" > Invalid  </label>
+						</div>
+						<div class="form-group">
+							<label>Gender:</label>
+							<div class="custom-radio">
+								<input id="male" type="radio" name="gender" value="Male">
+								<label ><span>Male</span></label>
+								<input id="female" type="radio" name="gender" value="Female">
+								<label><span>Female</span></label>
+								<label id="lbltext4" style="color: red; visibility: hidden" > Invalid  </label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Age:</label>
+							<input type="text" class="form-control" id="age" placeholder="Enter Age" name="age">
+							<label id="lbltext5" style="color: red; visibility: hidden" > Invalid  </label>
+						</div>
+						<div class="form-group">
+							<label>Country:</label>
+							<select name="select country" id="country" class="form-control"  placeholder="country">
+								<option value=""> Select Country </option>
+								<option value="India">India</option>
+								<option value="United Kindom">United Kindom</option>
+								<option value="America">America</option>
+								<option value="Canada">Canada</option>
+								<option value="Germany">Germany</option>
+							</select>
+							<label id="lbltext3" style="color: red; visibility: hidden" > Invalid  </label>
+						</div>
+						<div class="form-group">
+							
+							<label>Hobby:</label>
+							<div class ="col-sm-6">
+								<label><input type="checkbox" id="Cricket" name="hobby" value="Cricket"> Cricket</label>
+								<label><input type="checkbox" id="Football" name="hobby" value="Football"> Football</label>
+							</div>
+								<div class ="col-sm-6">
+								<label><input type="checkbox" id="Hockey" name="hobby" value="Hockey"> Hockey</label>
+								<label><input type="checkbox" id="Basketll" name="hobby" value="Basketll"> Basketball</label>
+							</div>
+						</div>
+						<div  class="form-action-buttons">
+							<button type="submit" class="btn btn-primary" value="submit" >Submit</button>
+							<button type="submit" class="btn btn-success" value="reset" onClick="resetForm();">Reset</button>
+						</div>
+					</form>
+				</div>
+			</td>
+			<td>
+				<input type="text" name="search" id="myInput" placeholder=" Search Names...." onkeyup="searchFun();">
+				<button type="submit" class="btn btn-primary"onClick="onSearch();" ><i class="fa fa-search"></i></button>
+				<table class="list" id="reg">
+					<thead>
+						<tr>
+							<th>Profil Image</th>
+							<th>Full Name</th>
+							<th>Email</th>
+							<th>Password</th>
+							<th>Gender</th>
+							<th>Age</th>
+							<th>Country</th>
+							<th>Hobby</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<script src="script.js"></script>
+</body>
+</html>
